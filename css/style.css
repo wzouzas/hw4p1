@@ -1,0 +1,139 @@
+/* 
+    Course: COMP.4610 GUI Programming I
+    Name: William Zouzas
+    Email: william_zouzas@student.uml.edu
+    Date Created: 10/24/2021
+
+    File: style.css
+    GUI Assignment: HW4 Part 1 Validation Plugin
+    File Description:  This file is the CSS file used to style the content in the HTML file index.html. The form on this webpage is styled using Bootstrap as well as CSS. The main theme of the page is grey with a large red button for generating the table. The form is centered along with the rest of the content, including the table. Bootstrap is also used in the HTML file to style the display based on different screen sizes and columns. In order to style the table, the nth-child() pseudo-class is used so that the first row and column of the table is different from the rest of the table. The table itself is styled in bold lettering with thicker border lines for easier readability. The text is a dark color with lighter background so it stands out.
+
+    Copyright (c) 2021 by William. All rights reserved. May be freely copied or excerpted for educational purposes with credit to the author.
+    Updated by WZ on 11/20/21
+*/
+
+/* 
+Style background color and font of text
+Add space to the bottom of the page using padding 
+*/
+#body {
+    background-color: lightgrey;
+    font-family: monospace;
+    padding-bottom: 50px;
+}
+
+/* 
+Center the description and form contents on the webpage using auto 
+*/
+div, form {
+    margin: 0px auto 0px auto;
+}
+
+/* 
+Center and style the main header of the webpage 
+*/
+.container h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 
+Style the labels in the form 
+*/
+.form-group {
+    font-weight: bold;
+}
+
+/* 
+Display a red border for all required items in the form 
+To override Bootstrap styling, "!important" is used here
+https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid 
+*/
+:required {
+    border-color: red !important;
+}
+
+/* 
+Style button colors 
+Use the "!important" to override Bootstrap
+*/
+.btn {
+    background-color: red !important;
+    border-color: red !important;
+}
+
+/* 
+Style secondary headings for Instructions, Rules, and Multiplication Table 
+*/
+h2 {
+    margin: 0px auto 0px auto;
+    padding-top: 30px;
+    text-align: center;
+}
+
+/* 
+Style multiplication table
+Change background color, set a fixed height, and change overflow to scroll so that the user can scroll through the table if large numbers are entered
+Make the text bold and larger so it is easier to read the values in the table 
+*/
+#result {
+    background-color:whitesmoke;
+    height: 500px;
+    overflow: scroll;
+    font-weight: bold;
+    font-size: larger;
+}
+
+/* 
+Alternate table column colors for readability 
+*/
+td:nth-child(2n + 1) {
+    background-color: darkgrey;
+}
+
+/* 
+Change the background color and text color of the first row 
+Also, fix the header and first column so that they remain fixed as the user scrolls through the table if it exceeds the size of the window
+https://stackoverflow.com/questions/15811653/table-with-fixed-header-and-fixed-column-on-pure-css
+*/
+table tr:nth-child(1) {
+    background-color: darkgray;
+    color: white;
+    /*position: -webkit-sticky;*/
+    position: sticky;
+    top: 0;
+}
+
+/* 
+Change the background color and text color of the first column 
+Also, fix the header and first column so that they remain fixed as the user scrolls through the table if it exceeds the size of the window
+https://stackoverflow.com/questions/15811653/table-with-fixed-header-and-fixed-column-on-pure-css
+*/
+table tr td:nth-child(1) {
+    background-color: darkgray;
+    color: white;
+    /*position: -webkit-sticky;*/
+    position:sticky;
+    left: 0;
+}
+
+/* 
+Add border to cells in table to separate the calculated values
+*/
+table, td {
+    border: 3px solid black;
+}
+
+/* Footer */
+footer {
+    padding: 50px;
+    text-align: center;
+}
+
+/*
+jQuery Error Messages 
+Change the error messages to red so that they stand out
+*/
+label.error {
+    color: red;
+}
